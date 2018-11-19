@@ -2,13 +2,11 @@
 
 var CLOUD_WIDTH = 420;
 var CLOUD_HEIGHT = 270;
-var STEP = 50;
+var STEP = 100;
 var GOT = 2;
-var START_NAMES = 100;
-var START_GIST = 100;
-var START_VALUE = 100;
-var names;
-var times;
+var START_NAMES = 20;
+var START_GIST = 20;
+var START_VALUE = 20;
 var maxValueColor = 255;
 var minValueColor = 0;
 var resultValuecolor;
@@ -60,14 +58,14 @@ window.renderStatistics = function (ctx, names, times) {
     } else {
       hightGist = (150 * ((times[i] * 100) / maxis)) / 100; // Сначала находится процент от максимального времени. А потом находится по найденному проценту число от 150
     }
-    ctx.fillText(Math.floor(times[i]), START_VALUE = START_VALUE + 50, CLOUD_HEIGHT - hightGist - 40);
+    ctx.fillText(Math.floor(times[i]), START_VALUE = START_VALUE + 100, CLOUD_HEIGHT - hightGist - 40);
     ctx.fillText(names[i], START_NAMES = START_NAMES + STEP + GOT, 260);
     ctx.fillRect(START_GIST = START_GIST + STEP, CLOUD_HEIGHT - hightGist - 30, 40, hightGist);
 
     if (i === names.length - 1) {
-      START_NAMES = 100;
-      START_GIST = 100;
-      START_VALUE = 100;
+      START_NAMES = 20;
+      START_GIST = 20;
+      START_VALUE = 20;
     }
   }
 };
