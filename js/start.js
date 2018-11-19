@@ -65,7 +65,7 @@ window.renderStatistics = function(ctx, names, times) {
     } else {
       var hightGist = (150 * ((times[i] * 100)/ maxis)) / 100;//Сначала находится процент от максимального времени. А потом находится по найденному проценту число от 150
     }
-    ctx.fillText(Math.floor(times[i]), START_VALUE = START_VALUE + 50, 85);
+    ctx.fillText(Math.floor(times[i]), START_VALUE = START_VALUE + 50,  CLOUD_HEIGHT - hightGist - 40);
     ctx.fillText(names[i], START_NAMES = START_NAMES + STEP + GOT, 260);
     ctx.fillRect(START_GIST = START_GIST + STEP, CLOUD_HEIGHT - hightGist - 30, 40, hightGist);
   }
