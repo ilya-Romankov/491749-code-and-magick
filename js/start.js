@@ -46,18 +46,16 @@ window.renderStatistics = function(ctx, names, times) {
   renderCloud(ctx, 100, 10, '#fff');
   renderText(ctx, 150, 30, 'Ура вы победили!', '16px PT Mono', '#000000');
   renderText(ctx, 150, 50, 'Список результатов:', '16px PT Mono', '#000000'); // Цвет и шрифт в параметрах для большей гибкости
-
   //ctx.fillStyle = '#000';
   //ctx.fillText('Вы', 150, 260);
   //ctx.fillRect(150, 90, 40, 150);
   var maxis = getMaxElement(times);
   for (var i = 0; i < names.length ; i++) {
-    ctx.fillStyle= "#000";
     if (names[i] === 'Вы') {
       ctx.fillStyle = 'rgba(255, 0, 0, 1)';
     } else {
       resultValuecolor = randomColor(minValueColor , maxValueColor);
-      ctx.fillStyle = 'rgb(0,0,'+ resultValuecolor +')';
+      ctx.fillStyle = 'rgb(50,50,'+ resultValuecolor +')';
     }
 
     if (times[i] == maxis) {
@@ -68,5 +66,11 @@ window.renderStatistics = function(ctx, names, times) {
     ctx.fillText(Math.floor(times[i]), START_VALUE = START_VALUE + 50,  CLOUD_HEIGHT - hightGist - 40);
     ctx.fillText(names[i], START_NAMES = START_NAMES + STEP + GOT, 260);
     ctx.fillRect(START_GIST = START_GIST + STEP, CLOUD_HEIGHT - hightGist - 30, 40, hightGist);
+
+    if (i == names.length - 1) {
+       START_NAMES = 100;
+       START_GIST = 100;
+       START_VALUE = 100;
+    }
   }
 };
